@@ -7,7 +7,6 @@ def llm_rewrite_query(question: str, groq_client) -> str:
     system_prompt = (
         "You rewrite user queries to be clearer and more suitable for document retrieval. "
         "Keep the meaning the same, but remove noise and make it concise."
-        "If user queries is Thai Language translate to english before rewrite."
     )
     messages = [
         {"role": "system", "content": system_prompt},
@@ -156,6 +155,8 @@ def rag_search(
     st.write("Step 2: Routing name space.")
     all_ns = get_all_namespaces(index)
     routed_ns = llm_route_namespaces(groq_client, rewritten, all_ns, top_k=ns_top_k)
+    
+    print("Routed namespaces:", len(routed_ns))
 
     if not routed_ns:
         return []

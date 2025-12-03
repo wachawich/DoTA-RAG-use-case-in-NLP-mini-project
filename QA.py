@@ -12,12 +12,6 @@ def build_prompt(user_question: str, context: str) -> str:
         "3. Answer in 2-3 paragraphs with **bold** for key terms\n"
         "4. Total: 4-5 sentences\n\n"
 
-        "LANGUAGE RULE:\n"
-        "- Detect the language of the QUESTION only.\n"
-        "- If the question is written mainly in Thai → answer in Thai.\n"
-        "- If the question is written mainly in English → answer in English.\n"
-        "- Do NOT translate the question.\n\n"
-
         "FORMATTING RULES:\n"
         "- Use ## for the main question/topic heading (makes it bigger)\n"
         "- Use **bold** for important terms within paragraphs\n"
@@ -49,7 +43,6 @@ def build_prompt_no_context(user_question: str) -> str:
 
         "RESPONSE STRUCTURE:\n"
         "1. Emoji + Brief greeting (1 line)\n"
-        "2. If quesstion is Thai Language answer in Thai Language otherwise answer in English\n"
 
         f"QUESTION: {user_question}\n\n"
 

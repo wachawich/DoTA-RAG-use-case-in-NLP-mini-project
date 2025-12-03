@@ -75,8 +75,6 @@ if user_input:
                 per_namespace=25,
                 final_k=10
             )
-
-            print(result)
             # 2) LLM answer
             if len(result) == 0:
                 st.write("Step 3: Ask with AI.")
