@@ -1,0 +1,89 @@
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.spec
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+.python-version
+
+
+# ============================================
+# Streamlit
+# ============================================
+.streamlit/credentials.toml
+.streamlit/secrets.toml
+
+
+# ============================================
+# Environment Variables
+# ============================================
+.env
+.env.local
+*.env
+
+
+# ============================================
+# Logs & Cache
+# ============================================
+*.log
+logs/
+.cache/
+*.sqlite3
+data/*.db
+.DS_Store
+
+# Streamlit cache
+.streamlit/
+**/__pycache__/
+**/.pytest_cache/
+
+
+# ============================================
+# IDE / Editor
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# ============================================
+# Models / Embeddings (optional)
+# ============================================
+*.bin
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.model
+*.pickle
+*.pkl
+
+
+# ============================================
+# Jupyter / Notebooks
+# ============================================
+.ipynb_checkpoints/
+*.ipynb
+
+
+# ============================================
+# OS Generated
+# ============================================
+Thumbs.db
+.DS_Store
