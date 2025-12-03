@@ -1,6 +1,8 @@
-# 🎯 DoTA-RAG: Dynamic Namespace Routing for Efficient Question Answering
+# 🎯 DoTA-RAG use case in NLP mini Project!
 
-## 📊 ส่วนที่ 1: Why DoTA-RAG? Time Complexity Optimization
+ref : ![DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1](https://arxiv.org/html/2506.12571v1)
+
+## 1. Time Complexity Optimization
 
 ### ปัญหาของ Traditional RAG
 ใน Traditional RAG เมื่อเรามี documents จำนวนมาก การค้นหาจะต้องทำ similarity search ใน **ทุก documents** ทำให้เกิด computational complexity ที่สูง:
@@ -26,12 +28,12 @@ Performance Gain: 50x faster retrieval!
 
 ---
 
-## 🔄 ส่วนที่ 2: Multi-Stage Processing Pipeline
+## 2. Multi-Stage Processing Pipeline
 
 ### 2.1 Query Rewriting
 แปลงคำถามของผู้ใช้ให้เหมาะสมกับการค้นหา documents
 
-**Prompt Template:**
+**Rewriting Prompt Template:**
 ```python
 system_prompt = (
     "You rewrite user queries to be clearer and more suitable for document retrieval. "
@@ -121,7 +123,7 @@ def build_prompt(user_question: str, context: str) -> str:
 
 ---
 
-## 🚀 การใช้งาน
+## การใช้งาน
 
 ### Installation
 ```bash
@@ -162,5 +164,3 @@ streamlit run app.py
 - ✅ **Beautiful Markdown Responses** with proper formatting
 
 ---
-
-**Built with ❤️ using DoTA-RAG methodology for efficient document retrieval**
