@@ -1,6 +1,6 @@
 # 🎯 DoTA-RAG use case in NLP mini Project!
 
-ref : ![DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1](https://arxiv.org/html/2506.12571v1)
+ref : DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1
 
 ## 1. Time Complexity Optimization
 
