@@ -2,7 +2,6 @@
 
 ref : DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1
 
-
 <br>
 
 ### NLP Group
@@ -22,24 +21,36 @@ ref : DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1
 ### ปัญหาของ Traditional RAG
 ใน Traditional RAG เมื่อเรามี documents จำนวนมาก การค้นหาจะต้องทำ similarity search ใน **ทุก documents** ทำให้เกิด computational complexity ที่สูง:
 
-- **Traditional RAG**: O(n) - ต้องค้นหาทั้ง 200 documents
-- **DoTA-RAG with Routing**: O(k) - ค้นหาเฉพาะ k namespaces ที่เลือก (k << n)
+- **Traditional RAG**: O(n) - ต้องค้นหาทั้ง 100 documents * chuck per docs (e.g. 20 chuck -> 100*20 = 2000 -> O(2000))
+- **DoTA-RAG with Routing**: O(k) - ค้นหาเฉพาะ k namespaces ที่เลือก (k << n) (e.g. 20 chuck * 4 namespace -> O(80))
+
+จะเห็นได้ถึงความต่างของ Time Complexity อย่างมาก
+
+
 
 ### Time Complexity Improvement
 ```
-Traditional RAG: O(200) = ค้นหาทั้ง 200 Wikipedia articles
+Traditional RAG: O(200) = ค้นหาทั้ง 100 Wikipedia articles
 DoTA-RAG: O(4) = ค้นหาเฉพาะ 4 namespaces ที่ relevant
 
 Performance Gain: 50x faster retrieval!
 ```
 
+### Example searching time
+- Before routing
+![Normal Search](img/normal_search.png)
+
+- After routing name space
+![Routing Namespace Search](img/routing_namespace_search.png)
+
+
 ### Dataset Information
-- **Total Documents**: 200 Wikipedia articles
+- **Total Documents**: 100 Wikipedia articles
 - **Document Structure**: 1 namespace = 1 Wikipedia article
 - **Embedding Model**: Snowflake Arctic Embed v1.5
 - **Vector Database**: Pinecone
 
-![DoTA-RAG Architecture](architecture_diagram.png)
+![DoTA-RAG Architecture](img/architecture_diagram.png)
 
 ---
 
