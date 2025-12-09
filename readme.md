@@ -5,6 +5,9 @@ ref : DoTA-RAG Paper : https://arxiv.org/html/2506.12571v1
 https://wikipedia-nlp-mini-project.streamlit.app/
 ![Web UI](img/webui.png)
 
+![Pipeline](img/pipeline.png)
+
+
 <br>
 
 ### NLP Group
